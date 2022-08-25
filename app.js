@@ -26,6 +26,7 @@ const startTime = () => {
 
 let intervalId;
 let clicked = false;
+
 startbuttontag.addEventListener("click", () => {
   clearInterval(intervalId);
   intervalId = setInterval(startTime, 1000);
@@ -57,22 +58,16 @@ continuebuttontag.addEventListener("click", () => {
     restartbuttontag.classList.remove("afterclick");
   }
 });
+
 restartbuttontag.addEventListener("click", () => {
   clearInterval(intervalId);
-  (hours = 0), (minutes = 0), (seconds = 0);
-  intervalId = setInterval(startTime, 1000);
+  (hours = 0), (seconds = 0), (minutes = 0);
+  stopwatchtag.textContent = "00:00:00";
   restartbuttontag.classList.toggle("afterclick");
+
   if (clicked !== true) {
     startbuttontag.classList.remove("afterclick");
     continuebuttontag.classList.remove("afterclick");
     pausebuttontag.classList.remove("afterclick");
   }
 });
-
-function resetbutton(buttontag) {
-  if (clicked !== true) {
-    startbuttontag.classList.remove("afterclick");
-    pausebuttontag.classList.remove("afterclick");
-    restartbuttontag.classList.remove("afterclick");
-  }
-}
