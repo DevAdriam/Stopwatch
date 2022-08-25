@@ -29,6 +29,7 @@ let clicked = false;
 
 startbuttontag.addEventListener("click", () => {
   clearInterval(intervalId);
+  (hours = 0), (minutes = 0), (seconds = 0);
   intervalId = setInterval(startTime, 1000);
   startbuttontag.classList.toggle("afterclick");
   if (clicked !== true) {
